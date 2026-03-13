@@ -1,0 +1,46 @@
+project_name: "DTP Severity Prediction"
+
+# current_experiment: "01_dtp"
+current_experiment: "02_econom_data"
+
+experiments_config:
+  base_dir: "res"
+
+paths:
+  input_dir: "data/need_process"
+  output_file: "data/processed/dataset_spb.parquet"
+
+  full_df: "data/processed/dtp_full_dataset.parquet"
+  spb_df: "data/processed/dtp_sankt-peterburg.parquet"
+  spb_and_lo_df: "data/processed/dtp_sankt-peterburg_and_lo.parquet"
+  szfo_df: "data/processed/dtp_szfo.parquet"
+
+  econom_data: "data/raw/0_ecomonic_factors.xlsx"
+
+  res: "data/res"
+
+  models: "data/models"
+
+etl:
+  # Режим обработки нарушений: 'skip', 'pre_event', 'post_event'
+  violations_mode: "post_event"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s | %(name)-20s | %(levelname)-8s | %(message)s"
+  datefmt: "%H:%M:%S"
+
+  log_dir: "logs"
+  filename: "pipeline.log"
+
+features:
+  target_col: "target"
+  # drop_cols: ["year"]
+  cat_cols: ["region_id", "light_cat", "scheme", "category"]
+  cat_cols_with_econom: ["region_id", "region_parent", "light_cat", "scheme", "category"]
+
+experiment:
+  # Варианты: "multiclass" (0,1,2), "binary_severe" (0 vs 1+2), "binary_fatal" (0+1 vs 2)
+  target_mode: "binary_severe"
+  # Если true, используем class_weights при обучении
+  balance_classes: true
