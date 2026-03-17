@@ -1,0 +1,8 @@
+features:
+  target_col: "target"
+  drop_cols: []
+  cat_cols:
+    - "region_id"
+    - "light_cat"
+    - "scheme"
+    - "category"

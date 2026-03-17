@@ -1,0 +1,9 @@
+dtp_etl:
+  input_extensions:
+    - ".zip"
+    - ".geojson"
+    - ".json"
+
+  violations_mode: "post_event"
+  fill_numeric_na_with_zero: true
+  drop_constant_columns: true

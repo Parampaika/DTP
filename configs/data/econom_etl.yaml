@@ -1,0 +1,53 @@
+econom_etl:
+  source_file: "data/raw/0_ecomonic_factors.xlsx"
+  sheet_name: 0
+  output_dataset_key: "econom_current"
+
+  required_columns:
+    - "region_name"
+    - "mun_district"
+    - "municipality"
+    - "year"
+    - "Population"
+    - "GAP"
+    - "Avg_Salary"
+    - "Employment"
+    - "Street_Length"
+    - "Land_Area"
+    - "RTA_dead"
+    - "RTA_serious"
+    - "RTA_minor"
+
+  key_columns:
+    - "region_name"
+    - "mun_district"
+    - "municipality"
+    - "year"
+
+  string_columns:
+    - "region_name"
+    - "mun_district"
+    - "municipality"
+
+  numeric_columns:
+    - "Population"
+    - "GAP"
+    - "Avg_Salary"
+    - "Employment"
+    - "Street_Length"
+    - "Land_Area"
+    - "RTA_dead"
+    - "RTA_serious"
+    - "RTA_minor"
+
+  year_column: "year"
+
+  na_values:
+    - "Н/Д"
+    - "н/д"
+    - "Н/д"
+    - "н/Д"
+
+  drop_rows_with_missing_keys: true
+  fail_on_duplicate_keys: true
+  sort_by_keys: true

@@ -1,0 +1,4 @@
+paths:
+  raw_dtp_dir: "data/raw"
+  need_process_dir: "data/need_process/russia"
+  processed_dir: "data/processed"

@@ -1,5 +1,5 @@
 import pandas as pd
-from etl.processors.base import BaseDataProcessor
+from etl.dtp.processors.base import BaseDataProcessor
 
 class SpatialProcessor(BaseDataProcessor):
     """
@@ -27,7 +27,7 @@ class SpatialProcessor(BaseDataProcessor):
                 df['region'] = df['region'].apply(self.normalize_text)
                 df['parent_region'] = df['parent_region'].apply(self.normalize_text)
 
-                df['region_id'] = df['parent_region'] + "_" + df['region']
+                df['region_id'] = df['parent_region'] + "__" + df['region']
                 
                 df.drop(columns=['parent_region', 'region'], inplace=True)
                 self.logger.info("   [i] Регионы (дочерный и родительский) обработаны.")

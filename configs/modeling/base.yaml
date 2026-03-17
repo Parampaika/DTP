@@ -1,0 +1,8 @@
+modeling:
+  target_mode: "binary_severe"
+  balance_classes: true
+
+  split:
+    test_size: 0.2
+    random_state: 42
+    stratify: true

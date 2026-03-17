@@ -1,0 +1,5 @@
+datasets:
+  dtp_current: "data/processed/dtp_russia.parquet"
+  econom_current: "data/processed/econom.parquet"
+  merged_micro: "data/processed/merged_micro.parquet"
+  merged_macro: "data/processed/merged_macro.parquet"

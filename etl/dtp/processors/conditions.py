@@ -1,5 +1,5 @@
 import pandas as pd
-from etl.processors.base import BaseDataProcessor
+from etl.dtp.processors.base import BaseDataProcessor
 
 class ConditionsProcessor(BaseDataProcessor):
     """

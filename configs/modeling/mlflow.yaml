@@ -1,0 +1,3 @@
+mlflow:
+  tracking_uri: "file:./mlruns"
+  experiment_name: "dtp_only"

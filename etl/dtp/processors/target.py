@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from etl.processors.base import BaseDataProcessor
+from etl.dtp.processors.base import BaseDataProcessor
 
 class TargetProcessor(BaseDataProcessor):
     """

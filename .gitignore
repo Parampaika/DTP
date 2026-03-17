@@ -56,7 +56,8 @@ src/testTestingRootWkspc/coverageWorkspace/.coverage
 
 catboost_info/
 .ipynb_checkpoints/
-data/
+data/need_process/
+data/raw/
 submission/
 .vscode/
 
