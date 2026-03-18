@@ -56,8 +56,6 @@ src/testTestingRootWkspc/coverageWorkspace/.coverage
 
 catboost_info/
 .ipynb_checkpoints/
-data/need_process/
-data/raw/
 submission/
 .vscode/
 
@@ -66,4 +64,6 @@ reports/
 0_reports/
 todo.md/
 
+data/raw/
+data/need_process/
 data/processed/*.parquet
