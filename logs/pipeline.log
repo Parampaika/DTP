@@ -20200,3 +20200,142 @@ RTA_minor      103
 00:28:21 | BuildMergedDataset   | INFO     | MICRO датасет сохранен: D:\Education\Arcticle\02_dtp_project_JAER\data\processed\merged_micro.parquet
 00:28:21 | BuildMergedDataset   | INFO     | MACRO датасет сохранен: D:\Education\Arcticle\02_dtp_project_JAER\data\processed\merged_macro.parquet
 00:28:21 | BuildMergedDataset   | INFO     | Пайплайн слияния завершен успешно!
+22:40:02 | BuildDtpDataset      | INFO     | Запуск сборки DTP dataset...
+22:40:02 | BuildDtpDataset      | INFO     | Читаем из: D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\spb
+22:40:02 | BuildDtpDataset      | INFO     | Сохраняем в: D:\Education\Arcticle\02_dtp_project_JAER\data\processed\dtp_spb.parquet
+22:40:02 | DtpPipeline          | INFO     | Найдено 1 файлов в директории D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\spb
+22:40:02 | DtpPipeline          | INFO     | Найдено файлов для обработки: 1
+22:40:02 | DtpPipeline          | INFO     | ================================================================================
+22:40:02 | DtpPipeline          | INFO     | ===== ЗАПУСК ОБРАБОТКИ ФАЙЛА: sankt-peterburg.geojson.zip =====
+22:40:02 | DtpPipeline          | INFO     | ================================================================================
+22:40:02 | JsonDataLoader       | INFO     | Загрузка: D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\spb\sankt-peterburg.geojson.zip
+22:40:02 | JsonDataLoader       | INFO     | Чтение из архива: sankt-peterburg.geojson
+22:42:41 | BuildDtpDataset      | INFO     | Запуск сборки DTP dataset...
+22:42:41 | BuildDtpDataset      | INFO     | Читаем из: D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\spb
+22:42:41 | BuildDtpDataset      | INFO     | Сохраняем в: D:\Education\Arcticle\02_dtp_project_JAER\data\processed\dtp_spb.parquet
+22:42:41 | DtpPipeline          | INFO     | Найдено 1 файлов в директории D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\spb
+22:42:41 | DtpPipeline          | INFO     | Найдено файлов для обработки: 1
+22:42:41 | DtpPipeline          | INFO     | ================================================================================
+22:42:41 | DtpPipeline          | INFO     | ===== ЗАПУСК ОБРАБОТКИ ФАЙЛА: sankt-peterburg.geojson.zip =====
+22:42:41 | DtpPipeline          | INFO     | ================================================================================
+22:42:41 | JsonDataLoader       | INFO     | Загрузка: D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\spb\sankt-peterburg.geojson.zip
+22:42:41 | JsonDataLoader       | INFO     | Чтение из архива: sankt-peterburg.geojson
+22:42:43 | JsonDataLoader       | INFO     | Формат: GeoJSON.
+22:42:45 | JsonDataLoader       | INFO     | Загружено строк: 56671. Колонок: 24
+22:42:45 | DtpPipeline          | INFO     | Обработка: CleaningProcessor
+22:42:45 | CleaningProcessor    | INFO     | --- Запуск очистки данных ---
+22:42:45 | CleaningProcessor    | INFO     | Удален технический мусор: ['id', 'coordinates', 'address']
+22:42:45 | CleaningProcessor    | INFO     | Удалены поля с утечкой данных (Leakage): ['dead_count', 'injured_count', 'participants_count']
+22:42:45 | DtpPipeline          | INFO     | Обработка: TemporalProcessor
+22:42:45 | TemporalProcessor    | INFO     | >>> [НАЧАЛО] Обработка времени и освещения...
+22:42:45 | TemporalProcessor    | INFO     |    [i] Циклы времени созданы.
+22:42:45 | TemporalProcessor    | INFO     |    [i] Свет обработан.
+22:42:45 | TemporalProcessor    | INFO     |    [-] Колонка 'datetime' удалена.
+22:42:45 | TemporalProcessor    | INFO     | <<< [КОНЕЦ] Обработка времени и освещения. Время: 0.49 сек.
+22:42:45 | DtpPipeline          | INFO     | Обработка: TagsProcessor
+22:42:45 | TagsProcessor        | INFO     | >>> [НАЧАЛО] Обработка объектов окружения (nearby)...
+22:42:47 | TagsProcessor        | INFO     |    [i] Строк с тегами 'other': 6.57% (3723/56671)
+22:42:47 | TagsProcessor        | WARNING  | Примеры тегов, попавших в 'other': ['кладбище', 'зоны_отдыха', 'объект_здание_сооружение_религиозного_культа', 'объект_строительства', 'автостоянка_отделенная_от_проезжей_части', 'иной_объект', 'производственное_предприятие', 'автостоянка_не_отделенная_от_проезжей_части']
+22:42:47 | TagsProcessor        | INFO     | <<< [КОНЕЦ] Обработка объектов окружения (nearby). Время: 1.19 сек.
+22:42:47 | DtpPipeline          | INFO     | Обработка: SpatialProcessor
+22:42:47 | SpatialProcessor     | INFO     | >>> [НАЧАЛО] Обработка географических признаков...
+22:42:47 | SpatialProcessor     | INFO     |    [i] Координаты обработаны.
+22:42:47 | SpatialProcessor     | INFO     |    [i] Регионы (дочерный и родительский) обработаны.
+22:42:47 | SpatialProcessor     | INFO     |    [i] Схемы обработаны (fillna + split).
+22:42:47 | SpatialProcessor     | INFO     | <<< [КОНЕЦ] Обработка географических признаков. Время: 0.66 сек.
+22:42:47 | DtpPipeline          | INFO     | Обработка: CategoryProcessor
+22:42:47 | CategoryProcessor    | INFO     | >>> [НАЧАЛО] Обработка категории дтп...
+22:42:48 | CategoryProcessor    | INFO     |    [i] Топ-3 категории: {'столкновение': 22404, 'наезд_на_пешехода': 20956, 'падение_пассажира': 3732}
+22:42:48 | CategoryProcessor    | INFO     | <<< [КОНЕЦ] Обработка категории дтп. Время: 0.32 сек.
+22:42:48 | DtpPipeline          | INFO     | Обработка: ConditionsProcessor
+22:42:48 | ConditionsProcessor  | INFO     | >>> [НАЧАЛО] Обработка списков погоды и дорожных условий...
+22:42:48 | ConditionsProcessor  | INFO     |    [i] Погода обработана.
+22:42:49 | ConditionsProcessor  | WARNING  | Колонка 'road_conditions': 2 неизвестных тегов → 'road_other'. Примеры: [неудовлетворительное_состояние_разделительной_полосы, отсутствие_направляющих_устройств_и_световозвращающих_элементов_на_них]. Затронуто 14 строк (0.02%).
+22:42:49 | ConditionsProcessor  | INFO     |    [i] Дорожные условия обработаны.
+22:42:49 | ConditionsProcessor  | INFO     | <<< [КОНЕЦ] Обработка списков погоды и дорожных условий. Время: 1.26 сек.
+22:42:49 | DtpPipeline          | INFO     | Обработка: VehicleProcessor
+22:42:49 | VehicleProcessor     | INFO     | >>> [НАЧАЛО] Обработка автомобилей (Счетчики, Возраст, Взаимодействие)...
+22:42:53 | VehicleProcessor     | INFO     | <<< [КОНЕЦ] Обработка автомобилей (Счетчики, Возраст, Взаимодействие). Время: 3.70 сек.
+22:42:53 | DtpPipeline          | INFO     | Обработка: ParticipantProcessor
+22:42:53 | ParticipantProcessor | INFO     | >>> [НАЧАЛО] Обработка участников (Режим нарушений: post_event)...
+22:42:56 | ParticipantProcessor | INFO     | <<< [КОНЕЦ] Обработка участников (Режим нарушений: post_event). Время: 3.42 сек.
+22:42:56 | DtpPipeline          | INFO     | Обработка: TargetProcessor
+22:42:56 | TargetProcessor      | INFO     | >>> [НАЧАЛО] Кодирование целевой переменной severity...
+22:42:57 | TargetProcessor      | INFO     |    [i] Баланс классов: {0: 36504, 1: 18119, 2: 2048}
+22:42:57 | TargetProcessor      | INFO     | <<< [КОНЕЦ] Кодирование целевой переменной severity. Время: 0.28 сек.
+22:42:57 | DtpPipeline          | WARNING  | Файл sankt-peterburg.geojson.zip: Обнаружены дублирующиеся названия колонок. Удаляем...
+22:42:57 | DtpPipeline          | INFO     | Файл sankt-peterburg.geojson.zip обработан. Итоговая форма: (56671, 93)
+22:42:57 | DtpPipeline          | INFO     | Объединение датафреймов...
+22:42:57 | DtpPipeline          | INFO     | После concat shape: (56671, 93)
+22:42:57 | DtpPipeline          | INFO     | Числовые NaN заполнены нулями. Колонок: 87
+22:42:57 | DtpPipeline          | INFO     | --- ЗАПУСК ФИНАЛЬНОЙ ЗАЧИСТКИ ---
+22:42:57 | DtpPipeline          | INFO     | Удалено 5 константных колонок: ['type', 'tags', 'weather_cold', 'weather_other', 'ppl_kids_count']
+22:42:57 | DtpPipeline          | INFO     | Итого колонок: 93 -> 88
+22:42:58 | DtpPipeline          | INFO     | Готово! Сохранено в D:\Education\Arcticle\02_dtp_project_JAER\data\processed\dtp_spb.parquet
+22:42:58 | DtpPipeline          | INFO     | Итоговый dataset shape: (56671, 88)
+22:42:58 | BuildDtpDataset      | INFO     | Сборка DTP dataset завершена.
+22:46:46 | BuildDtpDataset      | INFO     | Запуск сборки DTP dataset...
+22:46:46 | BuildDtpDataset      | INFO     | Читаем из: D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\msk
+22:46:46 | BuildDtpDataset      | INFO     | Сохраняем в: D:\Education\Arcticle\02_dtp_project_JAER\data\processed\dtp_msk.parquet
+22:46:46 | DtpPipeline          | INFO     | Найдено 1 файлов в директории D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\msk
+22:46:46 | DtpPipeline          | INFO     | Найдено файлов для обработки: 1
+22:46:46 | DtpPipeline          | INFO     | ================================================================================
+22:46:46 | DtpPipeline          | INFO     | ===== ЗАПУСК ОБРАБОТКИ ФАЙЛА: moskva.geojson.zip =====
+22:46:46 | DtpPipeline          | INFO     | ================================================================================
+22:46:46 | JsonDataLoader       | INFO     | Загрузка: D:\Education\Arcticle\02_dtp_project_JAER\data\need_process\msk\moskva.geojson.zip
+22:46:46 | JsonDataLoader       | INFO     | Чтение из архива: moskva.geojson
+22:46:49 | JsonDataLoader       | INFO     | Формат: GeoJSON.
+22:46:52 | JsonDataLoader       | INFO     | Загружено строк: 91749. Колонок: 24
+22:46:52 | DtpPipeline          | INFO     | Обработка: CleaningProcessor
+22:46:52 | CleaningProcessor    | INFO     | --- Запуск очистки данных ---
+22:46:52 | CleaningProcessor    | INFO     | Удален технический мусор: ['id', 'coordinates', 'address']
+22:46:52 | CleaningProcessor    | INFO     | Удалены поля с утечкой данных (Leakage): ['dead_count', 'injured_count', 'participants_count']
+22:46:52 | DtpPipeline          | INFO     | Обработка: TemporalProcessor
+22:46:52 | TemporalProcessor    | INFO     | >>> [НАЧАЛО] Обработка времени и освещения...
+22:46:52 | TemporalProcessor    | INFO     |    [i] Циклы времени созданы.
+22:46:52 | TemporalProcessor    | INFO     |    [i] Свет обработан.
+22:46:53 | TemporalProcessor    | INFO     |    [-] Колонка 'datetime' удалена.
+22:46:53 | TemporalProcessor    | INFO     | <<< [КОНЕЦ] Обработка времени и освещения. Время: 0.64 сек.
+22:46:53 | DtpPipeline          | INFO     | Обработка: TagsProcessor
+22:46:53 | TagsProcessor        | INFO     | >>> [НАЧАЛО] Обработка объектов окружения (nearby)...
+22:46:55 | TagsProcessor        | INFO     |    [i] Строк с тегами 'other': 14.55% (13349/91749)
+22:46:55 | TagsProcessor        | WARNING  | Примеры тегов, попавших в 'other': ['ледовая_переправа_официально_открытая_и_оборудованная', 'зоны_отдыха', 'объект_здание_сооружение_религиозного_культа', 'кладбище', 'автостоянка_не_отделенная_от_проезжей_части', 'автостоянка_отделенная_от_проезжей_части', 'объект_строительства', 'производственное_предприятие', 'иной_объект', 'стихийно_возникшая_не_предусмотренная_ледовая_переправа']
+22:46:55 | TagsProcessor        | INFO     | <<< [КОНЕЦ] Обработка объектов окружения (nearby). Время: 2.81 сек.
+22:46:55 | DtpPipeline          | INFO     | Обработка: SpatialProcessor
+22:46:55 | SpatialProcessor     | INFO     | >>> [НАЧАЛО] Обработка географических признаков...
+22:46:55 | SpatialProcessor     | INFO     |    [i] Координаты обработаны.
+22:46:56 | SpatialProcessor     | INFO     |    [i] Регионы (дочерный и родительский) обработаны.
+22:46:56 | SpatialProcessor     | INFO     |    [i] Схемы обработаны (fillna + split).
+22:46:56 | SpatialProcessor     | INFO     | <<< [КОНЕЦ] Обработка географических признаков. Время: 0.83 сек.
+22:46:56 | DtpPipeline          | INFO     | Обработка: CategoryProcessor
+22:46:56 | CategoryProcessor    | INFO     | >>> [НАЧАЛО] Обработка категории дтп...
+22:46:57 | CategoryProcessor    | WARNING  | Колонка 'category': 2 новых значений вне Whitelist → заменены на 'иной_вид_дтп'. Примеры: [возгорание_вследствие_технической_неисправности_движущегося_или_остановившегося_тс_участвующего_в_дорожном_движении, наезд_на_гужевой_транспорт]. Затронуто 7 строк (0.01%).
+22:46:57 | CategoryProcessor    | INFO     |    [i] Топ-3 категории: {'столкновение': 41209, 'наезд_на_пешехода': 31863, 'наезд_на_препятствие': 4976}
+22:46:57 | CategoryProcessor    | INFO     | <<< [КОНЕЦ] Обработка категории дтп. Время: 0.48 сек.
+22:46:57 | DtpPipeline          | INFO     | Обработка: ConditionsProcessor
+22:46:57 | ConditionsProcessor  | INFO     | >>> [НАЧАЛО] Обработка списков погоды и дорожных условий...
+22:46:57 | ConditionsProcessor  | INFO     |    [i] Погода обработана.
+22:46:58 | ConditionsProcessor  | WARNING  | Колонка 'road_conditions': 2 неизвестных тегов → 'road_other'. Примеры: [неудовлетворительное_состояние_разделительной_полосы, отсутствие_направляющих_устройств_и_световозвращающих_элементов_на_них]. Затронуто 19 строк (0.02%).
+22:46:58 | ConditionsProcessor  | INFO     |    [i] Дорожные условия обработаны.
+22:46:58 | ConditionsProcessor  | INFO     | <<< [КОНЕЦ] Обработка списков погоды и дорожных условий. Время: 1.77 сек.
+22:46:59 | DtpPipeline          | INFO     | Обработка: VehicleProcessor
+22:46:59 | VehicleProcessor     | INFO     | >>> [НАЧАЛО] Обработка автомобилей (Счетчики, Возраст, Взаимодействие)...
+22:47:04 | VehicleProcessor     | INFO     | <<< [КОНЕЦ] Обработка автомобилей (Счетчики, Возраст, Взаимодействие). Время: 5.75 сек.
+22:47:04 | DtpPipeline          | INFO     | Обработка: ParticipantProcessor
+22:47:04 | ParticipantProcessor | INFO     | >>> [НАЧАЛО] Обработка участников (Режим нарушений: post_event)...
+22:47:10 | ParticipantProcessor | INFO     | <<< [КОНЕЦ] Обработка участников (Режим нарушений: post_event). Время: 5.41 сек.
+22:47:10 | DtpPipeline          | INFO     | Обработка: TargetProcessor
+22:47:10 | TargetProcessor      | INFO     | >>> [НАЧАЛО] Кодирование целевой переменной severity...
+22:47:10 | TargetProcessor      | INFO     |    [i] Баланс классов: {0: 66704, 1: 20945, 2: 4100}
+22:47:10 | TargetProcessor      | INFO     | <<< [КОНЕЦ] Кодирование целевой переменной severity. Время: 0.36 сек.
+22:47:10 | DtpPipeline          | WARNING  | Файл moskva.geojson.zip: Обнаружены дублирующиеся названия колонок. Удаляем...
+22:47:10 | DtpPipeline          | INFO     | Файл moskva.geojson.zip обработан. Итоговая форма: (91749, 93)
+22:47:10 | DtpPipeline          | INFO     | Объединение датафреймов...
+22:47:10 | DtpPipeline          | INFO     | После concat shape: (91749, 93)
+22:47:10 | DtpPipeline          | INFO     | Числовые NaN заполнены нулями. Колонок: 87
+22:47:10 | DtpPipeline          | INFO     | --- ЗАПУСК ФИНАЛЬНОЙ ЗАЧИСТКИ ---
+22:47:11 | DtpPipeline          | INFO     | Удалено 4 константных колонок: ['type', 'tags', 'weather_other', 'ppl_kids_count']
+22:47:11 | DtpPipeline          | INFO     | Итого колонок: 93 -> 89
+22:47:11 | DtpPipeline          | INFO     | Готово! Сохранено в D:\Education\Arcticle\02_dtp_project_JAER\data\processed\dtp_msk.parquet
+22:47:11 | DtpPipeline          | INFO     | Итоговый dataset shape: (91749, 89)
+22:47:11 | BuildDtpDataset      | INFO     | Сборка DTP dataset завершена.
